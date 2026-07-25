@@ -1,2 +1,3 @@
-# mia-ritschard
-Professional portfolio repository
+# Mia Ritschard Portfolio
+
+Welcome to my professional portfolio repository.
