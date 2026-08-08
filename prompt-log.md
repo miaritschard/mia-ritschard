@@ -84,3 +84,38 @@ I also reviewed the sensitivity table, confirmed that it contained 11 formula-dr
 ### Outcome
 
 Completed and audited the Phase 3 FX hedging workbook. The workbook contains all required named ranges, formula-driven hedge calculations, a three-step money-market hedge, option calculations, a sensitivity table and chart, and visible validation checks. The audit documented three substantive findings and confirmed that the model is ready for live-data population in Phase 4.
+
+
+## August 7, 2026 — Phase 4: Market Data + Population
+
+### Task
+
+Replace the Phase 3 placeholder inputs with current market data, repopulate the existing FX hedging workbook, rerun the model checks, and cross-check the results against the FIN 321 FX Hedging Lab.
+
+### AI Assistance
+
+Used ChatGPT to:
+
+- Identify suitable live market-data sources for EURUSD spot and interest rates
+- Calculate the covered-interest-parity implied forward rate
+- Populate the existing workbook with the Phase 4 inputs
+- Recalculate the forward, money-market, option, and sensitivity outputs
+- Compare workbook results against the FIN 321 FX Hedging Lab
+- Identify and correct a difference in option-premium treatment
+- Draft the Phase 4 market-data memo and document the cross-check
+
+### Key Prompt
+
+“Help me replace my Phase 3 placeholder inputs with current market data, repopulate the existing workbook, rerun the validation checks, and compare the outputs against the FIN 321 FX Hedging Lab.”
+
+### Human Review and Iteration
+
+I reviewed the market-data choices and used an ECB EURUSD reference rate for spot, a 1-year U.S. Treasury rate for the USD rate, and the ECB €STR as a documented euro reference-rate proxy. Because I did not use a reliable free 1-year forward quote, I used covered interest parity to calculate the Phase 4 forward rate.
+
+During the FX Hedging Lab cross-check, the forward and money-market hedge results matched the workbook. However, I identified a discrepancy in the option results. The original workbook carried the option premium forward at the USD interest rate, while the FX Hedging Lab deducted the premium directly.
+
+I corrected the workbook's option formulas to use the same premium treatment as the Lab. After the correction, the put-hedge result at the 0% sensitivity case was $9,068,000, matching the Lab. I reran the sensitivity analysis and confirmed that the formulas recalculated without Excel errors.
+
+### Outcome
+
+Completed the Phase 4 market-data population and validation. The workbook now uses the documented market inputs, the covered-interest-parity check passes, the sensitivity analysis recalculates around the live spot rate, and the forward, money-market, and option results were cross-checked against the FIN 321 FX Hedging Lab. The identified option-premium discrepancy was resolved before submission.
