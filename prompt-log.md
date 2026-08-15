@@ -119,3 +119,39 @@ I corrected the workbook's option formulas to use the same premium treatment as 
 ### Outcome
 
 Completed the Phase 4 market-data population and validation. The workbook now uses the documented market inputs, the covered-interest-parity check passes, the sensitivity analysis recalculates around the live spot rate, and the forward, money-market, and option results were cross-checked against the FIN 321 FX Hedging Lab. The identified option-premium discrepancy was resolved before submission.
+
+## August 14, 2026 — Phase 5: LLM Analysis & Validation
+
+### Task
+
+Conduct an independent LLM execution of the U.S. Pharmaceutical Exporter hedge analysis, compare the LLM results with the completed workbook, verify key hedge outcomes by hand, make a final executive hedge recommendation, and evaluate the strengths and weaknesses of the Phase 2 specification.
+
+### AI Assistance
+
+Used ChatGPT to:
+
+* Conduct a fresh independent hedge analysis using only the Phase 2 Model Specification and Phase 4 Market-Data Memo
+* Calculate and compare the unhedged, forward, money-market, EUR put, and EUR call outcomes
+* Compare the independent LLM results with the completed Phase 4 workbook
+* Select representative -5%, 0%, and +5% sensitivity scenarios for validation
+* Recompute the forward hedge, three-step money-market hedge, and EUR put outcome by hand
+* Diagnose potential discrepancies and specification ambiguities
+* Evaluate the tradeoffs among certainty, flexibility, upside participation, liquidity, and premium cost
+* Develop the final recommendation to use the forward hedge
+* Review the Phase 2 specification and identify improvements for a future version
+
+### Key Prompt
+
+“Using only these two documents, independently compute the complete FX hedge analysis for the U.S. Pharmaceutical Exporter scenario. Calculate and compare the USD proceeds for the unhedged position, forward hedge, money-market hedge, EUR put option, and EUR call option. Evaluate the strategies across the ending spot-rate sensitivity points specified in the documents, show the formulas and calculations, and recommend the most appropriate hedge based solely on the information contained in the two documents.”
+
+### Human Review and Iteration
+
+I preserved the initial LLM response without correcting or coaching it during the independent execution. I then compared the LLM results with the Phase 4 workbook at the -5%, 0%, and +5% sensitivity points. The LLM and workbook results matched for all five strategies at the selected points.
+
+I independently hand-verified the forward hedge, all three steps of the money-market hedge, and the EUR put outcome under a 5% EUR depreciation scenario. These calculations reconciled to the workbook and the independent LLM output.
+
+Although there were no numerical discrepancies in the selected comparison cases, the validation revealed a specification ambiguity involving option-premium treatment. Phase 2 described carrying the option premium forward to maturity, while Phase 4 documented the correction to deduct the $160,000 premium directly. The independent LLM correctly treated the Phase 4 convention as controlling. I also identified the need for a clearer rounding policy and a more explicit explanation that the EUR call is included for comparison rather than as an economically appropriate primary hedge for an EUR receivable.
+
+### Outcome
+
+Completed the Phase 5 independent LLM execution, workbook comparison, hand verification, specification retrospective, and executive recommendation. The analysis supports fully hedging the EUR 8,000,000 receivable with a forward contract, which locks in $9,397,600 of USD proceeds with no upfront option premium. The Phase 5 validation also identified specific improvements that would make a future version of the model specification more precise and reproducible.
