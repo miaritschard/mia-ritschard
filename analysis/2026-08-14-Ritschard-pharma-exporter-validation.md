@@ -8,7 +8,7 @@ Date: August 14, 2026
 
 Part 1 — Independent LLM Execution
 
-For the independent LLM execution, I opened a fresh ChatGPT conversation with no prior conversation history. I provided only the Phase 2 Model Specification and the Phase 4 Market-Data Memo. I did not provide the workbook results or correct the LLM during its analysis.
+The complete [raw LLM output](./2026-08-14-Ritschard-pharma-exporter-llm-output.md) from the clean two-document execution is retained as the Phase 5 independent-run record and should be read together with this validation document.
 
 The LLM was instructed to independently calculate the USD proceeds from the unhedged position, forward hedge, money-market hedge, EUR put option, and EUR call option across the specified ending spot-rate sensitivity points. It was also asked to compare the strategies and recommend a hedge based only on the two provided documents.
 
